@@ -45,8 +45,10 @@ class _ExpensesState extends State<Expenses> {
     ),
   ];
 
+// Opens the add expense overlay
   void _openAddExpenseOverlay() {
     showModalBottomSheet(
+      backgroundColor: Theme.of(context).colorScheme.surfaceVariant,
       useSafeArea: true,
       isScrollControlled: true,
       context: context,
@@ -91,8 +93,9 @@ class _ExpensesState extends State<Expenses> {
 
     Widget mainContent = const Center(
       child: Text(
-        'No Expenses Here, Start Adding Some! By Spending Money!',
+        'No Expenses Here, Start Adding Some! \n                By Spending Money :))',
         softWrap: true,
+        textScaleFactor: 1.2,
       ),
     );
 
@@ -104,6 +107,22 @@ class _ExpensesState extends State<Expenses> {
     }
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Expense Tracker'),
+        centerTitle: true,
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        foregroundColor: Theme.of(context).colorScheme.onPrimary,
+        elevation: 15,
+        shadowColor: Colors.black54,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(200),
+            bottomRight: Radius.circular(200),
+          ),
+        ),
+        bottom: const PreferredSize(
+            preferredSize: Size.fromHeight(60), child: SizedBox()),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: _openAddExpenseOverlay,
         backgroundColor: Theme.of(context).colorScheme.primary,
@@ -117,8 +136,9 @@ class _ExpensesState extends State<Expenses> {
               top: true,
               child: Column(
                 children: [
-                  const SizedBox(height: 14),
+                  //chart widget
                   Chart(expenses: _dummydata),
+                  // Seperation line
                   const DottedLine(
                     dashColor: Colors.brown,
                     lineThickness: 4,
@@ -127,12 +147,6 @@ class _ExpensesState extends State<Expenses> {
                     dashLength: 4,
                     direction: Axis.horizontal,
                   ),
-                  // Divider(
-                  //   color: Theme.of(context).colorScheme.secondary,
-                  //   thickness: 1.2,
-                  //   indent: 12,
-                  //   endIndent: 12,
-                  // ),
                   const SizedBox(height: 6),
                   Expanded(
                     child: mainContent,
@@ -140,6 +154,7 @@ class _ExpensesState extends State<Expenses> {
                 ],
               ),
             )
+          // Widgets for larger screens
           : Row(
               children: [
                 Expanded(

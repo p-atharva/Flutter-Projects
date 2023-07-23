@@ -95,6 +95,7 @@ class _NewExpenseState extends State<NewExpense> {
                   maxLength: 40,
                   decoration: const InputDecoration(
                     labelText: 'Title',
+                    labelStyle: TextStyle(fontSize: 16),
                   ),
                 ),
                 Row(
@@ -106,6 +107,7 @@ class _NewExpenseState extends State<NewExpense> {
                         decoration: const InputDecoration(
                           prefixText: '\$ ',
                           labelText: 'Amount',
+                          labelStyle: TextStyle(fontSize: 16),
                         ),
                       ),
                     ),
@@ -119,7 +121,7 @@ class _NewExpenseState extends State<NewExpense> {
                               : formatter.format(_selectedDate!)),
                           IconButton(
                             onPressed: _presentDatePicker,
-                            icon: const Icon(Icons.calendar_today),
+                            icon: const Icon(Icons.date_range_rounded),
                           ),
                         ],
                       ),
@@ -130,12 +132,22 @@ class _NewExpenseState extends State<NewExpense> {
                 Row(
                   children: [
                     DropdownButton(
+                      borderRadius: const BorderRadius.all(Radius.circular(12)),
+                      alignment: Alignment.center,
+                      dropdownColor:
+                          Theme.of(context).colorScheme.surfaceVariant,
                       value: _selectedCategory,
                       items: ExpenseCategory.values
                           .map(
                             (category) => DropdownMenuItem(
                               value: category,
-                              child: Text(category.name.toUpperCase()),
+                              child: Text(
+                                category.name.toUpperCase(),
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                ),
+                              ),
                             ),
                           )
                           .toList(),
@@ -150,13 +162,16 @@ class _NewExpenseState extends State<NewExpense> {
                       },
                     ),
                     const Spacer(),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () {
                         // print(_titleController.text);
                         // print(_amountController.text);
                         _submitExpenseData();
                       },
-                      child: const Text('Save Expense'),
+                      child: const Text(
+                        'Save Expense',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                     ),
                     TextButton(
                       onPressed: () {
@@ -164,12 +179,6 @@ class _NewExpenseState extends State<NewExpense> {
                       },
                       child: const Text('Cancel'),
                     ),
-                    // ElevatedButton(
-                    //   onPressed: () {
-                    //     Navigator.pop(context);
-                    //   },
-                    //   child: const Text('Cancel'),
-                    // ),
                   ],
                 )
               ],

@@ -7,10 +7,10 @@ final formatter = DateFormat.yMd();
 const uuid = Uuid();
 
 const categoryIcons = {
-  ExpenseCategory.food: Icons.fastfood,
-  ExpenseCategory.transport: Icons.directions_car,
-  ExpenseCategory.bills: Icons.receipt,
-  ExpenseCategory.entertainment: Icons.movie,
+  ExpenseCategory.food: Icons.local_dining_rounded,
+  ExpenseCategory.transport: Icons.emoji_transportation,
+  ExpenseCategory.bills: Icons.receipt_long_rounded,
+  ExpenseCategory.entertainment: Icons.casino_rounded,
 };
 
 enum ExpenseCategory {
