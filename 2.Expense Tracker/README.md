@@ -4,7 +4,7 @@ A Simple Expense Tracker App where users can add expenses with four categories.
 
 ## Demo
 
-[![](Expense_Tracker.webm)](Expense_Tracker.webm)
+[![](ExpenseTracker.webm)](ExpenseTracker.webm)
 
 ## Features
 
