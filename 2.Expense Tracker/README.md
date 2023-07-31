@@ -4,7 +4,8 @@ A Simple Expense Tracker App where users can add expenses with four categories.
 
 ## Demo
 
-<img height="480px" src="https://github.com/p-atharva/Flutter-Projects/assets/109044077/0492a4df-eb09-4c7e-aded-36de5e9b727e">
+[ExpenseTracker.webm](https://github.com/p-atharva/Flutter-Projects/assets/109044077/4b117a5b-d949-42f2-9abd-0b7c19899a2e)
+
 
 
 ## Features
